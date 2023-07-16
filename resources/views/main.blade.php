@@ -48,5 +48,17 @@
             </div>
         </div>
     </div>
+    <div class="card p-5 bg-base-100 shadow-xl image-full">
+        <figure><img height ="100" width="200" src="{{asset('/images/api_dataos_abiertos_zaragoza.png')}}" alt="Proyectos" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">API</h2>
+            <p>{{__('Acceso a datos abiertos')}}</p>
+
+
+            <div class="card-actions justify-end">
+                <a href="{{route("api_zaragoza.index")}}" class="btn btn-primary">API Datos Abiertos de Zaragoza</a>
+            </div>
+        </div>
+    </div>
 </div>
 </x-layout.app>
