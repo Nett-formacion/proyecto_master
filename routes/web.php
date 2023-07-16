@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SaludoController;
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +55,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get("lang/{locale}", [LanguageController::class,"index"])->name('lang');
+
 require __DIR__.'/auth.php';
 
 
+
+Route::get("/sessions", [SessionController::class,'index'])->name("sessions.index");
+Route::post("/sessions/store", [SessionController::class,'store'])->name("sessions.store");
+//Route::get("/sessions", [SessionController::class,"form_sessions"])->name('sessions');
+//Route::post("sessions/sessions", [SessionController::class,"storage_sessions"])->name('sessions_storage');
+
+//Pruebas
+Route::get("pruebas",\App\Http\Controllers\PruebasController::class);

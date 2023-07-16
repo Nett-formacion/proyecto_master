@@ -153,7 +153,7 @@ export default {
                 if (a[campo] < b[campo])
                     return this.ascendente[campo] ? -1 : 1;
                 if (a[campo] == b[campo])
-                    return 0;
+                    return 0;0
             });
 
             console.log(this.filas.data);

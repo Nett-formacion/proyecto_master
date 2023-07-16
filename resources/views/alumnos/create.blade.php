@@ -8,7 +8,8 @@
 {{--        @endforeach--}}
 {{--    @endif--}}
 
-    <form action="{{route("alumnos.store",['page'=>$page])}}" method="post" class="space-y-4">
+    <form action="{{route("alumnos.store",['page'=>$page])}}" method="post"
+          class="space-y-4">
         @csrf
 
         <div>

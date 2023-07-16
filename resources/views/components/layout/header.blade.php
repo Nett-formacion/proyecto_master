@@ -3,9 +3,9 @@
  items-center justify-center  md:justify-between
  p-1"])}}>
     <img class="h-full w-1/4 items-center hidden md:block " src="{{asset("/images/nett.jpeg")}}" alt="logo">
-    <h1 class="w-2/4 font-mono text-center md:block text-6xl  font-bold ext- text-red-800">Proyectos de
-        alumnos</h1>
-    @auth
+    <h1 class="w-2/4 font-mono text-center md:block text-6xl  font-bold
+    ext- text-red-800">{{__("Proyectos de alumnos")}}</h1>
+@auth
         <form class=" flex flex-row  justify-start justify-items-center text-center hidden w-1/4 md:block " action="logout" method="post">
             @csrf
             <div class="w-1/3 text-2xl text-green-800 ">
@@ -16,6 +16,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
                 </svg>
             </button>
+
         </form>
     @endauth
     @guest
@@ -30,8 +31,10 @@
                 <x-a-button href="register"> Register</x-a-button>
             </div>
         </form>
-
     @endguest
+
+        <dropdown-langs lang_code='{{session()->get('locale')}}'
+                        list_of_langs='@json(config("language"))'></dropdown-langs>
 
 </header>
 {{--Para móbile md--}}
@@ -49,6 +52,8 @@
         <form class="" action="">
             <button class="btn btn-primary btn-xs  text-center " type="submit">Login/Logout</button>
         </form>
+
+
     </div>
 </header>
 

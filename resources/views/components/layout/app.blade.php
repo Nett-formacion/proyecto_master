@@ -9,6 +9,8 @@
           content=" {{$metaDescription ?? "Información de proyectos de alumnos NettFormacion master en desarrollo web"}}">
     <title>{{$title??"Proyectos"}}</title>
     @vite(["./resources/css/app.css","./resources/js/app.js" ])
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+
 </head>
 
 <body>
