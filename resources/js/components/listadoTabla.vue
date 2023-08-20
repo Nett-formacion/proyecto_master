@@ -95,6 +95,7 @@ export default {
     created() {
         this.filas = JSON.parse(this.filas_serializadas);
         this.campos = JSON.parse(this.campos_serializados);
+        console.log(this.campos);
         this.campos.forEach((campo) => {
             this.ascendente[campo] = true;
         });
@@ -104,6 +105,7 @@ export default {
         add() {
             let page = this.filas.current_page;
             console.log("Vamos a add un registro");
+            console.log("FILAS EN ADD"+this.filas);
             let url = window.location;
             console.log("vengo de" + url);
             window.location = url + "/create?page=" + page;

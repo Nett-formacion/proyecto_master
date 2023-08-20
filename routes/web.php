@@ -7,6 +7,7 @@ use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ApiDataZaragozaController;
+use App\Http\Controllers\VocabularioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,3 +74,8 @@ Route::get("pruebas",\App\Http\Controllers\PruebasController::class);
 Route::get("/api_zaragoza", [ApiDataZaragozaController::class,'index']);
 Route::resource("/api_zaragoza", \App\Http\Controllers\ApiDataZaragozaController::class);
 Route::post("/api_zaragoza/edit", [\App\Http\Controllers\ApiDataZaragozaController::class,"edit"]);
+
+Route::get("/vocabulario/index",[VocabularioController::class,"index"])
+    ->name("vocabulario.index")
+    ->middleware("auth");
+Route::resource('profesores',\App\Http\Controllers\ProfesorController::class);

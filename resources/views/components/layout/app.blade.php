@@ -16,9 +16,10 @@
 <body>
 <div id="app">
     <x-layout.header  class="h-15hv" nombre="pedro"/>
-    <x-layout.nav class="h-5hv" nombre="navegador"/>
-
-    <main class="h-70vh
+    <x-layout.nav class="h-5hv"  >
+        {{ $nav }}
+    </x-layout.nav>
+    <main class="h-70vhxxº
     bg-gradient-to-r from-main_left via-red-400 to-main_right
      flex flex-row justify-center ">
         {{$slot}}

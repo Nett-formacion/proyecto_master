@@ -8,6 +8,31 @@
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
+        <!-- Surname -->
+        <div>
+            <x-input-label for="surname" :value="__('Surname')" />
+            <x-text-input id="surname" class="block mt-1 w-full" type="text" name="surname" :value="old('surname')" required autofocus autocomplete="surname" />
+            <x-input-error :messages="$errors->get('surname')" class="mt-2" />
+        </div>
+        <!-- Nick -->
+        <div>
+            <x-input-label for="nick" :value="__('Nick')" />
+            <x-text-input id="nick" class="block mt-1 w-full" type="text" name="nick" :value="old('nick')" required autofocus autocomplete="nick" />
+            <x-input-error :messages="$errors->get('nick')" class="mt-2" />
+        </div>
+        <!-- Departament-->
+        <div>
+            <x-input-label for="departament" :value="__('Departament')" />
+            <x-text-input id="departament" class="block mt-1 w-full" type="text" name="departament" :value="old('departament')" required autofocus autocomplete="departament" />
+            <x-input-error :messages="$errors->get('departament')" class="mt-2" />
+        </div>
+
+        <!-- Rol-->
+        <div>
+            <x-input-label for="role" :value="__('Role')" />
+            <x-text-input id="role" class="block mt-1 w-full" type="text" name="departament" :value="old('Role')" required autofocus autocomplete="role" />
+            <x-input-error :messages="$errors->get('role')" class="mt-2" />
+        </div>
 
         <!-- Email Address -->
         <div class="mt-4">

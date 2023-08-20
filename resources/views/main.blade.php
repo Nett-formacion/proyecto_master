@@ -1,8 +1,18 @@
 <x-layout.app
     title="Proyectos Master" meta-description="Proyectos de alumnos del master desarrollo web fullstak en  Nettformación promoción 2022">
+
 {{--<div class="flex flex-col justify-between m-2 space-y-2  overflow-auto">--}}
 <div class="grid mx-10 p-10 gap-4 grid-cols-3 grid-row-auto overflow-auto">
-{{--<div class="grid grid-flow-col auto-cols-max justify-between m-2 space-x-42  overflow-auto">--}}
+    <x-slot name="nav">
+        <a class="btn btn-primary btn-sm  " href="{{route('about')}}">About</a>
+        <a class="btn btn-secondary btn-sm " href="{{route('contacta')}}">Contacta</a>
+        @auth
+            <a class=" btn btn-warning btn-sm " href="{{route('alumnos.index')}}">Alumnos</a>
+            <a class=" btn btn-error btn-sm" href="{{route('proyectos')}}">Proyectos</a>
+        @endauth
+    </x-slot>
+
+    {{--<div class="grid grid-flow-col auto-cols-max justify-between m-2 space-x-42  overflow-auto">--}}
     <div class="card p-5 bg-base-100 shadow-xl image-full">
         <figure><img src="{{asset('/images/laravel_sessions.png')}}" alt="Proyectos" /></figure>
         <div class="card-body">
@@ -31,7 +41,7 @@
             <h2 class="card-title">Traductor de palabras</h2>
             <p>Prueba a ver tu nivel en los idiomas</p>
             <div class="card-actions justify-end">
-                <button class="btn btn-primary">Empezar a jugar</button>
+                <a href="{{route('vocabulario.index')}}" class="btn btn-primary">Empezar a jugar</a>
             </div>
         </div>
     </div>

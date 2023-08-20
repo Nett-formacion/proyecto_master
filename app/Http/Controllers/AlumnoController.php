@@ -45,7 +45,7 @@ class AlumnoController extends Controller
 
         //Añadimos el nombre de la clave
         //        $campos = array_merge(["id"],$campos);
-        //Por si la claver tiene otro nombre
+        //Por si la clave tiene otro nombre
         $clave = (new Alumno())->getKeyName();
         $campos = array_merge([$clave],$campos);
 
