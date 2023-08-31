@@ -8,6 +8,7 @@ use App\Models\Profesor;
 use App\Models\User;
 use Database\Seeders\RolesSeeder;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
 
 class ProfesorController extends Controller
 {
@@ -21,7 +22,7 @@ class ProfesorController extends Controller
         //quiero obtener el rol de cada usuario para visualizarlo
         $users = User::with('roles:name')->paginate(5);
         $users->each(function ($user) {
-            $user->role = $user->roles->first()->name;
+            $user->role = $user->roles->first()->name??"";
             unset($user->roles);
         }
         );
@@ -66,7 +67,24 @@ class ProfesorController extends Controller
      */
     public function store(StoreProfesorRequest $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+
+        $profesor = User::create([
+            'name' => $request->name,
+            'surname' => $request->surname,
+            'department' => $request->department,
+            'nick' => $request->nick,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        $rol = Role::where("name",'profesor')->fisrt();
+        $profesor->assignRole($rol);
+        return redirect(route("profesores.index"));
     }
 
     /**

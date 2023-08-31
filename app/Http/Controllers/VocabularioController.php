@@ -12,8 +12,12 @@ class VocabularioController extends Controller
     //
     public function index()
     {
-        //En función del tipo de usuario, mostrar la conrrespondiente vista
-        $user = Auth::user();
+
+        //MRM obtener el usuario actualmente conectado
+        $user = Auth::getUser();
+
+        $rol = $user->roles[0]->name;
+
         return view('vocabulario.' . $user->roles[0]->name);
 
 

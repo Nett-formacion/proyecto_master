@@ -22,9 +22,9 @@
         </div>
         <!-- Departament-->
         <div>
-            <x-input-label for="departament" :value="__('Departament')" />
-            <x-text-input id="departament" class="block mt-1 w-full" type="text" name="departament" :value="old('departament')" required autofocus autocomplete="departament" />
-            <x-input-error :messages="$errors->get('departament')" class="mt-2" />
+            <x-input-label for="department" :value="__('Department')" />
+            <x-text-input id="department" class="block mt-1 w-full" type="text" name="departament" :value="old('departament')" required autofocus autocomplete="departament" />
+            <x-input-error :messages="$errors->get('department')" class="mt-2" />
         </div>
 
         <!-- Rol-->

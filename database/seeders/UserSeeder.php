@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
             'password' =>  bcrypt('12345678'), // password
             'remember_token' => Str::random(10),
             'nick'=>'admin',
-            'departement'=>'informatica',
+            'department'=>'informatica',
             'surname'=>'Romero Miguel',
         ];
         $user = new User($datos);
@@ -32,13 +32,13 @@ class UserSeeder extends Seeder
         $user->saveOrFail();
 
         $datos=[
-            'name' => 'Miguel ',
+            'name' => 'Miguel',
             'email' => 'p@p.com',
             'email_verified_at' => now(),
             'password' =>  bcrypt('12345678'), // password
             'remember_token' => Str::random(10),
             'nick'=>'profeMiguel',
-            'departement'=>'informatica',
+            'department'=>'informatica',
             'surname'=>'Morillas',
 
         ];
@@ -53,7 +53,7 @@ class UserSeeder extends Seeder
             'password' =>  bcrypt('12345678'), // password
             'remember_token' => Str::random(10),
             'nick'=>'Maria',
-            'departement'=>'informatica',
+            'department'=>'informatica',
             'surname'=>'Ruiz Rodríguez',
         ];
         $user = new User($datos);

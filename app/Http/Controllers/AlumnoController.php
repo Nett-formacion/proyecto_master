@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Alumno;
 use App\Http\Requests\StoreAlumnoRequest;
 use App\Http\Requests\UpdateAlumnoRequest;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Schema;
 
 use Illuminate\Support\Facades\Request;
@@ -16,8 +17,9 @@ class AlumnoController extends Controller
 
         $alumnos  =Alumno::paginate(5);
         $page = Request::get('page')??1;
-        logger("-".$page."-");
-        return response($alumnos);
+//        logger("Página -".$page."-");
+        return response()->json($alumnos);
+
     }
     /**
      * Display a listing of the resource.
@@ -66,6 +68,8 @@ class AlumnoController extends Controller
      */
     public function create()
     {
+
+
         $page = Request::get('page');
         return view("alumnos.create",compact('page'));
         //

@@ -1,5 +1,8 @@
 <x-layout.app>
-
+    <x-slot name="nav">
+       <a class="btn btn-secondary btn-sm " href="{{route('alumnos.index')}}">Cancelar</a>
+        <a class="btn btn-secondary btn-sm " href="{{route('main')}}">Volver Inicio</a>
+    </x-slot>
 <div class=" flex flex-col justify-center items-center">
     <h1 class=" text-4xl text-green-700">Datos nuevo alumno</h1>
 {{--    @if ($errors->any())--}}

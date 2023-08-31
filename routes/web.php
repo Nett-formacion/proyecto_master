@@ -28,6 +28,7 @@ Route::get('/', function () {
 })->name("main");
 
 
+Route::resource('profesores',\App\Http\Controllers\ProfesorController::class);
 
 Route::view("about","nav.about")->name("about");
 Route::get("alumnos/paginate",[AlumnoController::class,"get_paginate"] );
@@ -78,4 +79,4 @@ Route::post("/api_zaragoza/edit", [\App\Http\Controllers\ApiDataZaragozaControll
 Route::get("/vocabulario/index",[VocabularioController::class,"index"])
     ->name("vocabulario.index")
     ->middleware("auth");
-Route::resource('profesores',\App\Http\Controllers\ProfesorController::class);
+

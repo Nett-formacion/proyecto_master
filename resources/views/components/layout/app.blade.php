@@ -15,10 +15,13 @@
 
 <body>
 <div id="app">
-    <x-layout.header  class="h-15hv" nombre="pedro"/>
-    <x-layout.nav class="h-5hv"  >
-        {{ $nav }}
+    <x-layout.header class="h-15hv"/>
+    <x-layout.nav class="h-15hv">
+        {{$nav}}
+                    <a class="btn btn-primary btn-sm"  href="{{route('profesores.index')}}"> Crear profesor</a>
+                    <a class="btn btn-secondary btn-sm " href="{{route('contacta')}}">Volver</a>
     </x-layout.nav>
+
     <main class="h-70vhxxº
     bg-gradient-to-r from-main_left via-red-400 to-main_right
      flex flex-row justify-center ">

@@ -19,7 +19,7 @@ class AlumnoFactory extends Factory
         return [
             'nombre'=>fake()->name(),
             'edad'=>rand(10,100),
-            'email'=>fake()->email(),
+            'email'=>fake()->email()
             //
         ];
     }

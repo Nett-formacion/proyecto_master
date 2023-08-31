@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->string('nick')
                 ->nullable()
                 ->unique();
-            $table->string('departement')->nullable();
+            $table->string('department')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

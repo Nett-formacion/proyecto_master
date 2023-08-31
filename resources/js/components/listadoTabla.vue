@@ -125,6 +125,7 @@ export default {
             console.log(url);
             axios.delete(url)
                 .then((response) => {
+
                     this.filas = response.data;
                 })
                 .then((error) => {
@@ -135,6 +136,7 @@ export default {
         },
         getResults(page) {
             let url = window.location;
+            console.log ("pàgina "+page);
             axios.get(
                 url + "/paginate?page=" + page)
                 .then((response) => {
