@@ -3,10 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use DragonCode\Support\Facades\Helpers\Str;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Str;
 
 
 class UserSeeder extends Seeder
