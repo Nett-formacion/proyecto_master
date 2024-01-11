@@ -22,7 +22,7 @@
                     <a class="btn btn-secondary btn-sm " href="{{route('contacta')}}">Volver</a>
     </x-layout.nav>
 
-    <main class="h-70vhxxº
+    <main class="h-70vh
     bg-gradient-to-r from-main_left via-red-400 to-main_right
      flex flex-row justify-center ">
         {{$slot}}
